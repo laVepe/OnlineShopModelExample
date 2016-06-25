@@ -1,0 +1,169 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("93c683be-4a48-45c7-a0d8-a8221dddec00",
+	"00000000-0000-0000-0000-000000000000",
+	"0a871815-b46c-4369-8ce1-1baa8608a315",
+	'Functions',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("2e2a70eb-fb7f-4404-957d-2f3262564b91",
+	112,
+	"93c683be-4a48-45c7-a0d8-a8221dddec00",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'OnlineShop::components::OnlineShop::Functions');
+INSERT INTO DIM_DIA
+	VALUES ("2e2a70eb-fb7f-4404-957d-2f3262564b91",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("38cec11b-093c-4c58-8379-2cadb0092f01",
+	"00000000-0000-0000-0000-000000000000",
+	'init',
+	'',
+	'create object instance cust1 of Customer;
+cust1.name = "John Snow";
+cust1.address = "The castle of Winterfell";
+cust1.email = "john.snow@winteriscomming.com";
+
+create object instance cust2 of Customer;
+cust2.name = "Sansa Stark";
+cust2.address = "The castle of Winterfell";
+cust2.email = "sansa.stark@winteriscomming.com";
+
+create object instance cust3 of Customer;
+cust3.name = "Arya Stark";
+cust3.address = "The castle of Winterfell";
+cust3.email = "noone@winteriscomming.com";
+
+d = 14;
+m = 12;
+y = 2016;
+s = 0;
+m = 30;
+h = 23;
+
+create object instance acc1 of Account;
+relate cust1 to acc1 across R1;
+acc1.billing_address = "The Castle Black";
+acc1.is_closed = false;
+acc1.opened = TIM::create_date(day:d, month:m, year:y, second:s, minute:m, hour:h);
+
+create object instance acc2 of Account;
+relate cust2 to acc2 across R1;
+acc2.billing_address = "The castle of Winterfell";
+acc2.is_closed = false;
+acc2.opened = TIM::current_date ();
+
+create object instance acc3 of Account;
+relate cust3 to acc3 across R1;
+acc3.billing_address = "The castle of Winterfell";
+acc3.is_closed = false;
+acc3.opened = TIM::create_date(day:4, month:12, year:2015, second:08, minute:0, hour:20);
+
+create object instance sl1 of ShoppingCart;
+relate cust1 to sl1 across R2;
+relate acc1 to sl1 across R3;
+sl1.created = TIM::create_date (day:25, month:6, year:2016, second:0, minute:0, hour:19);
+
+create object instance sl2 of ShoppingCart;
+relate cust2 to sl2 across R2;
+relate acc2 to sl2 across R3;
+sl2.created = TIM::create_date (day:11, month:2, year:2016, second:0, minute:30, hour:15);
+
+create object instance sl3 of ShoppingCart;
+relate cust3 to sl3 across R2;
+relate acc3 to sl3 across R3;
+sl3.created = TIM::create_date (day:4, month:12, year:2015, second:8, minute:0, hour:20);
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'');
+INSERT INTO PE_PE
+	VALUES ("38cec11b-093c-4c58-8379-2cadb0092f01",
+	1,
+	"93c683be-4a48-45c7-a0d8-a8221dddec00",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("bf019a53-7f26-443c-abd9-f737e5c56409",
+	"00000000-0000-0000-0000-000000000000",
+	'make_order',
+	'',
+	'select any acc from instances of Account where (selected.billing_address == "The Castle Black");
+if (not_empty acc)
+	
+	create object instance order1 of Order;
+	relate acc to order1 across R4;
+	order1.ordered = TIM::current_date();
+	order1.shipped = TIM::create_date(day:2, month:7, year:2016, second:00, minute:05, hour:10);
+	order1.total = 10.99;
+	
+	create object instance item1 of Item;
+	item1.name = "Long Fighting Sword";
+	item1.quantity = 1;
+	item1.price = 150.0;
+	
+	create object instance item2 of Item;
+	item2.name = "Throwing knife";
+	item2.quantity = 4;
+	item2.price = 35.0;
+	
+	create object instance item3 of Item;
+	item3.name = "Necklace";
+	item3.quantity = 1;
+	item3.price = 100.0;
+	
+	relate order1 to item1 across R6;
+	relate item1 to item2 across R7.''follows'';
+	relate item2 to item3 across R7.''follows'';
+	relate order1 to item3 across R8;
+end if;',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'');
+INSERT INTO PE_PE
+	VALUES ("bf019a53-7f26-443c-abd9-f737e5c56409",
+	1,
+	"93c683be-4a48-45c7-a0d8-a8221dddec00",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("93c683be-4a48-45c7-a0d8-a8221dddec00",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"c2f9431b-7bbf-4178-89c7-e02ff2f35a07",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("c2f9431b-7bbf-4178-89c7-e02ff2f35a07",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'OnlineShop',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'../OnlineShop.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("0a871815-b46c-4369-8ce1-1baa8608a315",
+	'OnlineShop',
+	1,
+	'../../../OnlineShop.xtuml');

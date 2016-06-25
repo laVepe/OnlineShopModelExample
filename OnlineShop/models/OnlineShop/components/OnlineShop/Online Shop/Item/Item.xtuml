@@ -1,0 +1,104 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("b529a5d7-b5da-4631-9f22-6d57d380afe0",
+	'Item',
+	5,
+	'Item',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("3251d092-e025-4b9a-8fb7-2b7500f7d62b",
+	"b529a5d7-b5da-4631-9f22-6d57d380afe0");
+INSERT INTO O_BATTR
+	VALUES ("3251d092-e025-4b9a-8fb7-2b7500f7d62b",
+	"b529a5d7-b5da-4631-9f22-6d57d380afe0");
+INSERT INTO O_ATTR
+	VALUES ("3251d092-e025-4b9a-8fb7-2b7500f7d62b",
+	"b529a5d7-b5da-4631-9f22-6d57d380afe0",
+	"00000000-0000-0000-0000-000000000000",
+	'name',
+	'',
+	'',
+	'name',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("d3f11d6b-9446-4186-9661-5d21911ddff9",
+	"b529a5d7-b5da-4631-9f22-6d57d380afe0");
+INSERT INTO O_BATTR
+	VALUES ("d3f11d6b-9446-4186-9661-5d21911ddff9",
+	"b529a5d7-b5da-4631-9f22-6d57d380afe0");
+INSERT INTO O_ATTR
+	VALUES ("d3f11d6b-9446-4186-9661-5d21911ddff9",
+	"b529a5d7-b5da-4631-9f22-6d57d380afe0",
+	"3251d092-e025-4b9a-8fb7-2b7500f7d62b",
+	'ItemID',
+	'',
+	'',
+	'ItemID',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000005",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("9683c6e3-0764-477e-bfd4-021d9ae78ea3",
+	"b529a5d7-b5da-4631-9f22-6d57d380afe0");
+INSERT INTO O_BATTR
+	VALUES ("9683c6e3-0764-477e-bfd4-021d9ae78ea3",
+	"b529a5d7-b5da-4631-9f22-6d57d380afe0");
+INSERT INTO O_ATTR
+	VALUES ("9683c6e3-0764-477e-bfd4-021d9ae78ea3",
+	"b529a5d7-b5da-4631-9f22-6d57d380afe0",
+	"d3f11d6b-9446-4186-9661-5d21911ddff9",
+	'quantity',
+	'',
+	'',
+	'quantity',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("b089a1a3-cd45-46cd-85dd-4cfe31727de9",
+	"b529a5d7-b5da-4631-9f22-6d57d380afe0");
+INSERT INTO O_BATTR
+	VALUES ("b089a1a3-cd45-46cd-85dd-4cfe31727de9",
+	"b529a5d7-b5da-4631-9f22-6d57d380afe0");
+INSERT INTO O_ATTR
+	VALUES ("b089a1a3-cd45-46cd-85dd-4cfe31727de9",
+	"b529a5d7-b5da-4631-9f22-6d57d380afe0",
+	"9683c6e3-0764-477e-bfd4-021d9ae78ea3",
+	'price',
+	'',
+	'',
+	'price',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"b529a5d7-b5da-4631-9f22-6d57d380afe0");
+INSERT INTO O_ID
+	VALUES (1,
+	"b529a5d7-b5da-4631-9f22-6d57d380afe0");
+INSERT INTO O_ID
+	VALUES (2,
+	"b529a5d7-b5da-4631-9f22-6d57d380afe0");
+INSERT INTO PE_PE
+	VALUES ("b529a5d7-b5da-4631-9f22-6d57d380afe0",
+	1,
+	"8dbfae2b-f778-46c4-939f-86351e40f734",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("8dbfae2b-f778-46c4-939f-86351e40f734",
+	"00000000-0000-0000-0000-000000000000",
+	"0a871815-b46c-4369-8ce1-1baa8608a315",
+	'Online Shop',
+	'',
+	0,
+	'../Online Shop.xtuml');

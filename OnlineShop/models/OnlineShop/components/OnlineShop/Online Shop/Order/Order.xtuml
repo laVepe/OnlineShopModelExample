@@ -1,0 +1,104 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("b76810db-8de2-4b66-b960-d584a46af1eb",
+	'Order',
+	4,
+	'Order',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("13270915-36ce-401a-b1cb-0869fcc95004",
+	"b76810db-8de2-4b66-b960-d584a46af1eb");
+INSERT INTO O_BATTR
+	VALUES ("13270915-36ce-401a-b1cb-0869fcc95004",
+	"b76810db-8de2-4b66-b960-d584a46af1eb");
+INSERT INTO O_ATTR
+	VALUES ("13270915-36ce-401a-b1cb-0869fcc95004",
+	"b76810db-8de2-4b66-b960-d584a46af1eb",
+	"00000000-0000-0000-0000-000000000000",
+	'OrderID',
+	'',
+	'',
+	'OrderID',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000005",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("7814ddd9-f686-425b-b98e-54b37c0b9ee3",
+	"b76810db-8de2-4b66-b960-d584a46af1eb");
+INSERT INTO O_BATTR
+	VALUES ("7814ddd9-f686-425b-b98e-54b37c0b9ee3",
+	"b76810db-8de2-4b66-b960-d584a46af1eb");
+INSERT INTO O_ATTR
+	VALUES ("7814ddd9-f686-425b-b98e-54b37c0b9ee3",
+	"b76810db-8de2-4b66-b960-d584a46af1eb",
+	"13270915-36ce-401a-b1cb-0869fcc95004",
+	'ordered',
+	'',
+	'',
+	'ordered',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000010",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("93c7841f-e9ff-4b2c-9c9a-0f4f92be45b6",
+	"b76810db-8de2-4b66-b960-d584a46af1eb");
+INSERT INTO O_BATTR
+	VALUES ("93c7841f-e9ff-4b2c-9c9a-0f4f92be45b6",
+	"b76810db-8de2-4b66-b960-d584a46af1eb");
+INSERT INTO O_ATTR
+	VALUES ("93c7841f-e9ff-4b2c-9c9a-0f4f92be45b6",
+	"b76810db-8de2-4b66-b960-d584a46af1eb",
+	"7814ddd9-f686-425b-b98e-54b37c0b9ee3",
+	'shipped',
+	'',
+	'',
+	'shipped',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000010",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("2e573317-0062-4b66-a831-26b86688cd72",
+	"b76810db-8de2-4b66-b960-d584a46af1eb");
+INSERT INTO O_BATTR
+	VALUES ("2e573317-0062-4b66-a831-26b86688cd72",
+	"b76810db-8de2-4b66-b960-d584a46af1eb");
+INSERT INTO O_ATTR
+	VALUES ("2e573317-0062-4b66-a831-26b86688cd72",
+	"b76810db-8de2-4b66-b960-d584a46af1eb",
+	"93c7841f-e9ff-4b2c-9c9a-0f4f92be45b6",
+	'total',
+	'',
+	'',
+	'total',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"b76810db-8de2-4b66-b960-d584a46af1eb");
+INSERT INTO O_ID
+	VALUES (1,
+	"b76810db-8de2-4b66-b960-d584a46af1eb");
+INSERT INTO O_ID
+	VALUES (2,
+	"b76810db-8de2-4b66-b960-d584a46af1eb");
+INSERT INTO PE_PE
+	VALUES ("b76810db-8de2-4b66-b960-d584a46af1eb",
+	1,
+	"8dbfae2b-f778-46c4-939f-86351e40f734",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("8dbfae2b-f778-46c4-939f-86351e40f734",
+	"00000000-0000-0000-0000-000000000000",
+	"0a871815-b46c-4369-8ce1-1baa8608a315",
+	'Online Shop',
+	'',
+	0,
+	'../Online Shop.xtuml');
