@@ -34,102 +34,95 @@ INSERT INTO DIM_DIA
 	0.000000,
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO S_SYNC
-	VALUES ("38cec11b-093c-4c58-8379-2cadb0092f01",
+	VALUES ("a567280a-9c5a-48bc-a6a8-da420062936d",
 	"00000000-0000-0000-0000-000000000000",
 	'init',
 	'',
 	'create object instance cust1 of Customer;
-cust1.name = "John Snow";
-cust1.address = "The castle of Winterfell";
-cust1.email = "john.snow@winteriscomming.com";
+cust1.name = "Arya Stark";
+cust1.address = "The Castle of Winterfell";
+cust1.email = "noone@winteriscomming.com";
 
 create object instance cust2 of Customer;
 cust2.name = "Sansa Stark";
-cust2.address = "The castle of Winterfell";
+cust2.address = "The Castle of Winterfell";
 cust2.email = "sansa.stark@winteriscomming.com";
 
 create object instance cust3 of Customer;
-cust3.name = "Arya Stark";
-cust3.address = "The castle of Winterfell";
-cust3.email = "noone@winteriscomming.com";
-
-d = 14;
-m = 12;
-y = 2016;
-s = 0;
-m = 30;
-h = 23;
+cust3.name = "John Snow";
+cust3.address = "The Castle of Winterfell";
+cust3.email = "john.snow@winteriscomming.com";
 
 create object instance acc1 of Account;
 relate cust1 to acc1 across R1;
-acc1.billing_address = "The Castle Black";
+acc1.billing_address = "The Castle of Winterfell";
 acc1.is_closed = false;
-acc1.opened = TIM::create_date(day:d, month:m, year:y, second:s, minute:m, hour:h);
+acc1.opened = TIM::create_date(day:25, month:6, year:2016, second:0, minute:30, hour:12);
 
 create object instance acc2 of Account;
 relate cust2 to acc2 across R1;
-acc2.billing_address = "The castle of Winterfell";
+acc2.billing_address = "The Castle of Winterfell";
 acc2.is_closed = false;
-acc2.opened = TIM::current_date ();
+acc2.opened = TIM::create_date(day:4, month:2, year:2016, second:08, minute:0, hour:15);
 
 create object instance acc3 of Account;
 relate cust3 to acc3 across R1;
-acc3.billing_address = "The castle of Winterfell";
+acc3.billing_address = "The Castle Black";
 acc3.is_closed = false;
-acc3.opened = TIM::create_date(day:4, month:12, year:2015, second:08, minute:0, hour:20);
+acc3.opened = TIM::create_date(day:4, month:5, year:2015, second:08, minute:0, hour:10);
 
-create object instance sl1 of ShoppingCart;
-relate cust1 to sl1 across R2;
-relate acc1 to sl1 across R3;
-sl1.created = TIM::create_date (day:25, month:6, year:2016, second:0, minute:0, hour:19);
+create object instance sc1 of ShoppingCart;
+relate cust1 to sc1 across R2;
+relate acc1 to sc1 across R3;
+sc1.created = TIM::create_date (day:25, month:6, year:2016, second:0, minute:30, hour:12);
 
-create object instance sl2 of ShoppingCart;
-relate cust2 to sl2 across R2;
-relate acc2 to sl2 across R3;
-sl2.created = TIM::create_date (day:11, month:2, year:2016, second:0, minute:30, hour:15);
+create object instance sc2 of ShoppingCart;
+relate cust2 to sc2 across R2;
+relate acc2 to sc2 across R3;
+sc2.created = TIM::create_date (day:4, month:2, year:2016, second:08, minute:0, hour:15);
 
-create object instance sl3 of ShoppingCart;
-relate cust3 to sl3 across R2;
-relate acc3 to sl3 across R3;
-sl3.created = TIM::create_date (day:4, month:12, year:2015, second:8, minute:0, hour:20);
+create object instance sc3 of ShoppingCart;
+relate cust3 to sc3 across R2;
+relate acc3 to sc3 across R3;
+sc3.created = TIM::create_date (day:4, month:5, year:2015, second:08, minute:0, hour:10);
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'');
 INSERT INTO PE_PE
-	VALUES ("38cec11b-093c-4c58-8379-2cadb0092f01",
+	VALUES ("a567280a-9c5a-48bc-a6a8-da420062936d",
 	1,
 	"93c683be-4a48-45c7-a0d8-a8221dddec00",
 	"00000000-0000-0000-0000-000000000000",
 	1);
 INSERT INTO S_SYNC
-	VALUES ("bf019a53-7f26-443c-abd9-f737e5c56409",
+	VALUES ("c1bfe829-fbcc-4545-bdd3-2ab203990dc7",
 	"00000000-0000-0000-0000-000000000000",
 	'make_order',
 	'',
 	'select any acc from instances of Account where (selected.billing_address == "The Castle Black");
 if (not_empty acc)
-	
+
 	create object instance order1 of Order;
 	relate acc to order1 across R4;
-	order1.ordered = TIM::current_date();
-	order1.shipped = TIM::create_date(day:2, month:7, year:2016, second:00, minute:05, hour:10);
-	order1.total = 10.99;
+	order1.ordered = TIM::create_date(day:25, month:6, year:2016, second:0, minute:6, hour:10);
+	order1.shipped = TIM::current_date();
+	order1.total = 285.00;
 	
 	create object instance item1 of Item;
 	item1.name = "Long Fighting Sword";
 	item1.quantity = 1;
-	item1.price = 150.0;
+	item1.price = 150.00;
 	
 	create object instance item2 of Item;
 	item2.name = "Throwing knife";
 	item2.quantity = 4;
-	item2.price = 35.0;
+	item2.price = 35.00;
 	
 	create object instance item3 of Item;
 	item3.name = "Necklace";
 	item3.quantity = 1;
-	item3.price = 100.0;
+	item3.price = 100.00;
 	
 	relate order1 to item1 across R6;
 	relate item1 to item2 across R7.''follows'';
@@ -140,7 +133,7 @@ end if;',
 	1,
 	'');
 INSERT INTO PE_PE
-	VALUES ("bf019a53-7f26-443c-abd9-f737e5c56409",
+	VALUES ("c1bfe829-fbcc-4545-bdd3-2ab203990dc7",
 	1,
 	"93c683be-4a48-45c7-a0d8-a8221dddec00",
 	"00000000-0000-0000-0000-000000000000",
